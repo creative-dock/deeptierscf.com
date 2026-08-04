@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works — from purchase order to funded invoice</title>
+<meta name="description" content="The mechanics of deep-tier financing: how anchor demand cascades into purchase orders, how the tier 2 invoice is linked back to it through ERP data, and how a funder finances the verified transaction.">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand__name">Deeptier</span>
+      <span class="brand__tbd" title="Placeholder wordmark — final logo to be defined">logo tbd</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i></i></button>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Overview</a>
+      <a href="anchors.html">OEM / Anchor</a>
+      <a href="tier-1.html">Tier 1</a>
+      <a href="tier-2.html">Tier 2+</a>
+      <a href="how-it-works.html">How it works</a>
+      <a class="btn btn--primary header-cta" href="#start">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero hero--simple gridlines">
+    <div class="wrap hero__grid">
+      <div class="reveal">
+        <span class="pill"><span class="dot"></span> The mechanics</span>
+        <h1 class="h-display hero__title">One invoice. Three companies.
+          <span class="grad-text">A story a funder can underwrite.</span>
+        </h1>
+        <p class="lead">Nothing here requires a new commercial arrangement between the tiers. The documents that
+          prove the transaction already exist &mdash; they're just scattered across three ERP systems that don't
+          talk to each other. Our job is to assemble them into one verified record, and stand behind it.</p>
+        <div class="btn-row hero__actions">
+          <a class="btn btn--primary" href="#flow">Follow a transaction <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="#faq">Jump to the FAQ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE CHAIN ============ -->
+  <section class="band band--alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The chain</span>
+        <h2 class="h-1">Demand cascades down. The invoice comes back up.</h2>
+        <p class="lead">Before the invoice we finance ever exists, a chain of commitments has already formed.
+          Each link leaves a document behind, and each document is the evidence for the next one.</p>
+      </div>
+
+      <div class="chain reveal">
+        <div class="chain__node">
+          <span class="chip chip--teal">Step A</span>
+          <h4>Anchor &rarr; Tier 1</h4>
+          <p>The OEM issues a purchase order or contract to its tier 1 supplier against a build programme.
+            Documented, investment-grade demand.</p>
+          <div class="chain__flowlabel">PO / contract in the ERP</div>
+        </div>
+        <div class="chain__node">
+          <span class="chip chip--teal">Step B</span>
+          <h4>Tier 1 &rarr; Tier 2</h4>
+          <p>To fulfil it, tier 1 issues its own purchase order to tier 2 for parts, castings or material
+            &mdash; derived from the anchor's order.</p>
+          <div class="chain__flowlabel">PO in the ERP</div>
+        </div>
+        <div class="chain__node">
+          <span class="chip chip--copper">Step C</span>
+          <h4>Tier 2 &rarr; Tier 1</h4>
+          <p>Tier 2 delivers the goods and raises an invoice on tier 1 against that purchase order. This is the
+            financeable event.</p>
+          <div class="chain__flowlabel chain__flowlabel--copper">Invoice &mdash; financed</div>
+        </div>
+      </div>
+
+      <div class="grid grid--2 reveal" style="margin-top:34px;">
+        <div class="card">
+          <h3 class="h-3">Why the link matters</h3>
+          <p>Read on its own, a tier 2 invoice is a claim on a small company's word. Read in the chain, it is a
+            claim traceable to an OEM's build programme, acknowledged by a tier 1 that received the goods. Same
+            invoice, entirely different risk.</p>
+        </div>
+        <div class="card">
+          <h3 class="h-3">And what closes the loop</h3>
+          <p>What tier 1 machines or assembles from those parts flows onward to the anchor under Step A. The
+            output is tied back to the demand that started it &mdash; which is what makes the chain a loop rather
+            than three unrelated trades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE FLOW ============ -->
+  <section class="band gridlines" id="flow">
+    <div class="wrap wrap--narrow">
+      <div class="section-head reveal">
+        <span class="eyebrow">End to end</span>
+        <h2 class="h-1">Following one transaction from order to disbursement</h2>
+      </div>
+
+      <div class="flow">
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--teal">Anchor</span><span class="chip chip--teal">Tier 1</span></span>
+            <h3 class="h-3">Data access is granted, once</h3>
+            <p>The anchor and tier 1 grant permissioned, read-only access to the trade documents they already
+              exchange, scoped to an agreed programme. This is the only thing they are asked for &mdash; no
+              facility, no guarantee, no treasury programme.</p>
+            <div class="docrow">
+              <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5"/><path d="M5 3h9l5 5v13H5z"/></svg> Anchor PO / contract</span>
+              <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5"/><path d="M5 3h9l5 5v13H5z"/></svg> Tier 1 PO to tier 2</span>
+              <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v5h5"/><path d="M5 3h9l5 5v13H5z"/></svg> Master data</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--copper">Tier 2</span></span>
+            <h3 class="h-3">Tier 2 delivers and applies</h3>
+            <p>Having shipped the goods, tier 2 raises its invoice on tier 1 and submits a funding application
+              through the platform &mdash; uploading the invoice, the purchase order it answers, and proof of
+              delivery.</p>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--teal">Us</span></span>
+            <h3 class="h-3">We assemble and verify the story</h3>
+            <p>We match the invoice to tier 1's purchase order, that purchase order to the anchor's demand, and
+              the delivery to the invoice lines. Quantities, parties, dates and values have to agree. Where they
+              don't, the application stops here.</p>
+            <div class="docrow">
+              <span class="doc">Invoice &harr; T1 PO</span>
+              <span class="doc">T1 PO &harr; Anchor PO</span>
+              <span class="doc">Delivery &harr; invoice lines</span>
+              <span class="doc">Counterparty identity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip">Funder</span></span>
+            <h3 class="h-3">The funder underwrites the transaction</h3>
+            <p>The verified record goes to the funder bank, which assesses the transaction with the credit
+              quality of the anchor and tier 1 in view &mdash; not the tier 2's balance sheet in isolation. It
+              lends into the transaction directly; there is no program facility standing between them.</p>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--copper">Tier 2</span><span class="chip">Funder</span></span>
+            <h3 class="h-3">Terms offered, funds disbursed</h3>
+            <p>If approved, the funder issues terms &mdash; intended to be better than what tier 2 could
+              contract directly with a high-street bank on its own standing. Tier 2 accepts and receives funds
+              against the invoice.</p>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--teal">Tier 1</span></span>
+            <h3 class="h-3">Settlement on the original due date</h3>
+            <p>Tier 1 pays the invoice when it always would have, on unchanged terms. Nothing about its working
+              capital position or DPO moves.</p>
+          </div>
+        </div>
+
+        <div class="flow__step reveal">
+          <div class="flow__num" aria-hidden="true"></div>
+          <div class="flow__body">
+            <span class="flow__who"><span class="chip chip--teal">Anchor</span><span class="chip chip--teal">Tier 1</span></span>
+            <h3 class="h-3">Intelligence flows back up</h3>
+            <p>Every verified transaction sharpens the map. The anchor and tier 1 receive supply-chain health
+              analysis on the deeper tiers: who is there, which operations are critical, whose funding demand is
+              accelerating, and where financial stress is building before it becomes a missed delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE EXCHANGE ============ -->
+  <section class="band band--deep">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">The exchange</span>
+        <h2 class="h-1">Data for liquidity, liquidity for resilience</h2>
+        <p class="lead">The model only works because each party gives something it already has and gets
+          something it can't buy elsewhere.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <span class="chip chip--teal" style="margin-bottom:14px; display:inline-flex;">Anchor / OEM</span>
+          <h3 class="h-3">Gives</h3>
+          <p>Permissioned access to purchase orders and contracts already issued to tier 1.</p>
+          <h3 class="h-3" style="margin-top:18px;">Gets</h3>
+          <p>A mapped deeper supply base with financial-health and criticality signals &mdash; and suppliers who
+            stay solvent enough to deliver.</p>
+        </article>
+        <article class="card reveal" data-d="1">
+          <span class="chip chip--teal" style="margin-bottom:14px; display:inline-flex;">Tier 1</span>
+          <h3 class="h-3">Gives</h3>
+          <p>Permissioned access to purchase orders issued to tier 2, and acknowledgement that goods were
+            received.</p>
+          <h3 class="h-3" style="margin-top:18px;">Gets</h3>
+          <p>A funded, more stable sub-tier at no cost to its own cash, terms or credit lines &mdash; plus
+            visibility on which sub-tier firms are straining.</p>
+        </article>
+        <article class="card reveal" data-d="2">
+          <span class="chip chip--copper" style="margin-bottom:14px; display:inline-flex;">Tier 2+</span>
+          <h3 class="h-3">Gives</h3>
+          <p>Its invoice, the purchase order behind it, proof of delivery, and company identification.</p>
+          <h3 class="h-3" style="margin-top:18px;">Gets</h3>
+          <p>Cash at delivery on terms priced off the chain above it, with no facility to negotiate and no
+            programme to join.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT MAKES IT DIFFERENT ============ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Compared with conventional SCF</span>
+        <h2 class="h-1">Why this reaches where programs can't</h2>
+      </div>
+      <div class="tablewrap reveal">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col">&nbsp;</th>
+              <th scope="col">Conventional SCF program</th>
+              <th scope="col">Commercial lending to tier 2</th>
+              <th scope="col" class="col-us">Deep-tier financing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>How deep it reaches</td>
+              <td>Tier 1 only</td>
+              <td>Any tier, at any price</td>
+              <td class="col-us">Tier 2 and beyond</td>
+            </tr>
+            <tr>
+              <td>What is underwritten</td>
+              <td>Confirmed payables of the anchor</td>
+              <td>The borrower's balance sheet</td>
+              <td class="col-us">The verified transaction and the demand behind it</td>
+            </tr>
+            <tr>
+              <td>Setup required</td>
+              <td>Treasury-run program, legal &amp; onboarding per supplier</td>
+              <td>Facility negotiation, collateral, guarantees</td>
+              <td class="col-us">Permissioned data access, then per-transaction application</td>
+            </tr>
+            <tr>
+              <td>Anchor / tier 1 obligation</td>
+              <td>Payables confirmation, facility, accounting treatment</td>
+              <td>None &mdash; and no benefit either</td>
+              <td class="col-us">Data only. No facility, no guarantee, no terms change</td>
+            </tr>
+            <tr>
+              <td>Pricing driver</td>
+              <td>Anchor credit</td>
+              <td>Tier 2's own rating and size</td>
+              <td class="col-us">Chain credit &mdash; anchor and tier 1 in view</td>
+            </tr>
+            <tr>
+              <td>Visibility produced</td>
+              <td>Tier 1 payables only</td>
+              <td>None</td>
+              <td class="col-us">Deep-tier map, health and criticality signals</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="band band--alt" id="faq">
+    <div class="wrap wrap--narrow">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h-1">The questions we get first</h2>
+      </div>
+
+      <div class="faq">
+        <details class="qa reveal">
+          <summary>Does the anchor or tier 1 have to set up a funding program?</summary>
+          <div class="qa__body">No. That is the point of the model. Neither party contracts a facility with the
+            funder, confirms payables, or runs a program inside treasury. Their contribution is permissioned
+            access to trade documents they already exchange.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>Does anyone's payment terms change?</summary>
+          <div class="qa__body">No. Tier 1 pays the invoice on its original due date. The anchor's terms with
+            tier 1 are untouched. The financing sits between tier 2 and the funder.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>What ERP data do you actually need?</summary>
+          <div class="qa__body">The documents that evidence the chain: the purchase order or contract from the
+            anchor to tier 1, the purchase order from tier 1 to tier 2, and enough master data to identify
+            parties and parts. From tier 2 we need the invoice and proof of delivery. Access is read-only and
+            scoped to an agreed programme under a data agreement &mdash; we are not asking anyone to share their
+            general ledger.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>Who takes the credit risk?</summary>
+          <div class="qa__body">The funder. It lends directly into the transaction and assesses it with the
+            anchor's and tier 1's credit quality in view. We are the verification layer that makes that
+            assessment possible; we do not take the credit position.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>What if the documents don't reconcile?</summary>
+          <div class="qa__body">The application stops. Our value to the funder is that a verified story is
+            genuinely verified &mdash; quantities, parties, dates and values have to agree across the chain. A
+            mismatch is surfaced rather than smoothed over.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>Why would terms be better than a commercial bank's?</summary>
+          <div class="qa__body">Because the funder is not pricing a small company in isolation. It is pricing a
+            documented transaction whose demand originates with an investment-grade anchor and whose delivery has
+            been acknowledged by a tier 1. Better information and better-quality underlying demand should mean
+            better terms than tier 2 can contract on its own standing.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>What does the anchor learn about its suppliers?</summary>
+          <div class="qa__body">Who sits beneath its tier 1s on a given programme, which of those operations are
+            critical or single-sourced, and financial-health indicators derived from verified trade activity and
+            funding demand &mdash; including early signals such as accelerating funding requests or deteriorating
+            payment behaviour. It is supply-chain intelligence, produced as a by-product of financing.</div>
+        </details>
+        <details class="qa reveal">
+          <summary>Does tier 2 need its customer's permission to apply?</summary>
+          <div class="qa__body">Tier 2 applies on its own initiative with its own documents. Verification does
+            depend on the tiers above having granted data access for that programme, which is why we start by
+            onboarding an anchor and its tier 1s before opening applications beneath them.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="band band--tight" id="start">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div style="max-width:60ch;">
+          <span class="eyebrow">Get started</span>
+          <h2 class="h-1">Where you start depends on where you sit</h2>
+          <p class="lead">Anchors and tier 1s start with a data conversation on one programme. Tier 2 suppliers
+            start with a single invoice.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="anchors.html">I'm an OEM / anchor</a>
+            <a class="btn btn--ghost" href="tier-1.html">I'm a tier 1</a>
+            <a class="btn btn--copper" href="tier-2.html">I'm a tier 2 supplier</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="brand__name">Deeptier</span>
+        </a>
+        <p class="site-footer__note">Deep-tier supply chain finance. We link invoices to the purchase orders and
+          anchor demand behind them, so funders can lend into the tiers programs never reach.</p>
+      </div>
+      <div>
+        <h5>By role</h5>
+        <ul>
+          <li><a href="anchors.html">OEM / Anchor</a></li>
+          <li><a href="tier-1.html">Tier 1 suppliers</a></li>
+          <li><a href="tier-2.html">Tier 2 and beyond</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Understand it</h5>
+        <ul>
+          <li><a href="index.html#problem">The problem</a></li>
+          <li><a href="index.html#solution">The solution</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="how-it-works.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="tiny">&copy; 2026 Deeptier (working name). Brand identity in development.</p>
+      <p class="tiny">Indicative information only &mdash; not an offer of credit. Funding is provided by partner funders subject to their own approval.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

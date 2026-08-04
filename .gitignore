@@ -1,0 +1,48 @@
+# ---- OS ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# ---- Editors / IDEs ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Local agent / tooling state ----
+.claude/settings.local.json
+
+# ---- Node (only if tooling is added later) ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# ---- Build / deploy output ----
+dist/
+build/
+.cache/
+.parcel-cache/
+.vercel/
+.netlify/
+
+# ---- Secrets & environment ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- Python (the dev server is stdlib, but just in case) ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/

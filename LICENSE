@@ -1,0 +1,47 @@
+Copyright (c) 2026 Creative Dock Czech s.r.o. All rights reserved.
+
+PROPRIETARY AND CONFIDENTIAL
+
+This repository and its entire contents — including but not limited to the source
+code, markup, stylesheets, scripts, design system, written copy, diagrams, and
+any brand or identity assets (together, the "Work") — are the proprietary and
+confidential property of Creative Dock Czech s.r.o. and its affiliates (the
+"Owner").
+
+No license, express or implied, is granted by the Owner to any person or entity
+by virtue of access to this repository. In particular, and without limitation,
+you may NOT do any of the following without the Owner's prior written consent:
+
+  1. Copy, reproduce, publish, distribute, sublicense, sell, or otherwise make
+     the Work or any part of it available to any third party.
+  2. Create derivative works from the Work, or incorporate any part of it into
+     another product, project, website, or design system.
+  3. Use the Work, or any of the copy, positioning, commercial model, or
+     supply-chain finance methodology described within it, for any commercial or
+     competitive purpose.
+  4. Remove, alter, or obscure any copyright, trademark, or proprietary notice
+     contained in the Work.
+
+Access may be granted to employees, contractors, advisers, and partners of the
+Owner solely for the purpose of developing, reviewing, or operating this project,
+and remains subject to any applicable employment, contractor, or non-disclosure
+agreement. Such access does not transfer ownership of any part of the Work.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE OWNER BE LIABLE
+FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK OR THE
+USE OR OTHER DEALINGS IN THE WORK.
+
+Nothing in this repository constitutes an offer of credit, an offer to sell or
+solicitation to buy any financial product or security, or investment, legal, tax,
+or financial advice. All figures, dashboards, and supplier examples contained in
+the Work are illustrative only.
+
+For licensing or permission enquiries, contact the Owner.
+
+---
+
+Note for maintainers: once the venture is incorporated as its own legal entity,
+update the copyright holder above to that entity's registered name.
