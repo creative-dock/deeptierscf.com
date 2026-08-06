@@ -1,5 +1,5 @@
 /* =========================================================
-   Deep-Tier Supply Chain Finance — microsite styles
+   Deep-Tier Supply Chain Finance: microsite styles
    Dark-first fintech system: ink neutrals + teal primary + copper accent
    ========================================================= */
 
@@ -249,7 +249,7 @@ section { position: relative; }
   height: 70px;
 }
 
-/* placeholder brand mark — swap when the real logo lands */
+/* placeholder brand mark: swap when the real logo lands */
 .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
 .brand:hover { color: #fff; }
 .brand__mark {
@@ -279,18 +279,6 @@ section { position: relative; }
   font-size: 1.02rem;
   letter-spacing: -0.02em;
 }
-.brand__tbd {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--text-faint);
-  border: 1px dashed var(--line-strong);
-  border-radius: 4px;
-  padding: 2px 5px;
-  margin-left: 2px;
-  text-transform: uppercase;
-}
-
 .nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .nav a {
   padding: 9px 13px;
@@ -379,6 +367,16 @@ section { position: relative; }
   box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.18);
 }
 
+/* single consolidated note under the hero (replaces the old 4-box trust strip) */
+.heronote {
+  margin-top: clamp(38px, 4.5vw, 60px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: clamp(0.95rem, 1.2vw, 1.06rem);
+  color: var(--text-mid);
+  max-width: 78ch;
+}
+
 /* trust strip under hero */
 .trust {
   margin-top: clamp(44px, 5vw, 68px);
@@ -398,7 +396,33 @@ section { position: relative; }
 }
 .trust dd { margin: 5px 0 0; font-size: 0.86rem; color: var(--text-dim); line-height: 1.45; }
 
+/* promoted single feature block, for the one idea a section leads on */
+.spotlight {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: clamp(26px, 3.4vw, 38px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(20, 184, 166, 0.28);
+  background:
+    radial-gradient(90% 140% at 0% 0%, rgba(20, 184, 166, 0.11), transparent 62%),
+    linear-gradient(170deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  box-shadow: var(--shadow-card);
+}
+.spotlight .ico { margin-bottom: 0; }
+.spotlight .lead { max-width: 68ch; }
+
 /* ---------- tier stack visual (hero art) ---------- */
+.tierstack__cap {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
 .tierstack {
   display: grid;
   gap: 12px;
@@ -601,6 +625,12 @@ section { position: relative; }
 
 .ticks li b { color: var(--text); font-weight: 600; }
 
+/* larger tick list, for a short high-value list that carries a section */
+.ticks--lg { gap: 20px; }
+.ticks--lg li { font-size: 1.05rem; padding-left: 34px; line-height: 1.6; }
+.ticks--lg li::before { width: 20px; height: 20px; top: 0.3em; }
+.ticks--lg li::after { left: 6.5px; top: 0.66em; }
+
 /* crosses, for problem/pain lists */
 .crosses { list-style: none; margin: 0; padding: 0; display: grid; gap: 13px; }
 .crosses li {
@@ -628,6 +658,10 @@ section { position: relative; }
   top: 0.3em;
 }
 .crosses li b { color: var(--text); font-weight: 600; }
+
+/* bullet list replacing paragraph copy inside a card */
+.card__bullets { margin-top: 14px; gap: 10px; }
+.card__bullets li { font-size: 0.92rem; }
 
 /* ---------- flow (how it works) ---------- */
 .flow { display: grid; gap: 0; counter-reset: step; }
@@ -709,6 +743,16 @@ section { position: relative; }
 }
 .doc svg { width: 14px; height: 14px; color: var(--teal-300); flex: none; }
 
+/* the documents the applicant must bring: highlighted so they stand out as the ask */
+.doc--key {
+  border-style: solid;
+  border-color: rgba(224, 138, 60, 0.45);
+  background: rgba(224, 138, 60, 0.1);
+  color: var(--text);
+  font-weight: 560;
+}
+.doc--key svg { color: var(--copper-300); }
+
 /* ---------- chain diagram ---------- */
 .chain {
   display: grid;
@@ -727,7 +771,7 @@ section { position: relative; }
 .chain__node:last-child { border-right: 0; }
 .chain__node h4 { font-size: 1.02rem; margin-bottom: 8px; }
 .chain__node p { font-size: 0.88rem; color: var(--text-dim); }
-.chain__node .chip { margin-bottom: 14px; }
+.chain__node .chip { margin-bottom: 22px; }
 .chain__flowlabel {
   margin-top: 18px;
   padding-top: 14px;
@@ -766,7 +810,26 @@ section { position: relative; }
 }
 .panel__title { font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
 
-/* signal rows — used on anchor page (supply-chain health) */
+/* dashboard summary strip, so the signal panel reads as a health view at a glance */
+.dashsum {
+  display: flex;
+  gap: 28px;
+  padding-bottom: 16px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.dashsum div { display: flex; align-items: baseline; gap: 7px; }
+.dashsum b {
+  font-size: 1.5rem;
+  font-weight: 660;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.dashsum__warn { color: var(--copper-300); }
+.dashsum span { font-size: 0.78rem; color: var(--text-dim); }
+
+/* signal rows: used on anchor page (supply-chain health) */
 .signal {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -816,8 +879,62 @@ table.cmp td { color: var(--text-mid); }
 table.cmp .col-us { background: rgba(20, 184, 166, 0.05); }
 table.cmp thead .col-us { color: var(--teal-300); }
 
+/* tick / cross comparison: marks carry the meaning, not sentences */
+table.cmp--marks { min-width: 680px; }
+table.cmp--marks td:not(:first-child),
+table.cmp--marks thead th:not(:first-child) { text-align: center; width: 20%; }
+table.cmp--marks td:first-child { width: 40%; }
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.mark--yes {
+  color: var(--teal-300);
+  background: rgba(20, 184, 166, 0.14);
+  border: 1px solid rgba(20, 184, 166, 0.42);
+}
+.mark--yes::before { content: "\2713"; }
+.mark--no {
+  color: #f8a3a3;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.34);
+}
+.mark--no::before { content: "\2715"; }
+
+/* two-column role / benefit pairs */
+table.cmp--pairs { min-width: 0; }
+table.cmp--pairs td:first-child {
+  width: 34%;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-300);
+  font-weight: 700;
+}
+table.cmp--pairs td:last-child { color: var(--text); font-size: 1.02rem; }
+
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: 12px; }
+
+/* group label, so a longer FAQ stays scannable */
+.faq__group {
+  margin: 26px 0 2px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+.faq__group:first-child { margin-top: 0; }
 details.qa {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -844,7 +961,7 @@ details.qa summary::after {
   flex: none;
   transition: transform 0.2s var(--ease);
 }
-details.qa[open] summary::after { content: "–"; }
+details.qa[open] summary::after { content: "\2212"; }
 details.qa[open] { border-color: var(--line-strong); }
 details.qa .qa__body { padding: 0 22px 20px; color: var(--text-mid); font-size: 0.95rem; }
 
@@ -952,6 +1069,7 @@ details.qa .qa__body { padding: 0 22px 20px; color: var(--text-mid); font-size: 
 
 @media (max-width: 620px) {
   .grid--2, .grid--4 { grid-template-columns: 1fr; }
+  .spotlight { grid-template-columns: 1fr; gap: 18px; }
   .site-footer__grid { grid-template-columns: 1fr; gap: 30px; }
   .flow__step { grid-template-columns: 44px 1fr; gap: 18px; }
   .flow__num { width: 44px; height: 44px; border-radius: 12px; font-size: 0.88rem; }

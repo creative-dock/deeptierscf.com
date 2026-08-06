@@ -1,4 +1,4 @@
-/* Deep-tier microsite — nav toggle, scroll reveal, active nav state */
+/* Deep-tier microsite: nav toggle, scroll reveal, active nav state */
 (function () {
   "use strict";
 
