@@ -1,0 +1,81 @@
+name: Deploy to GitHub Pages
+
+# Publishes the static site to GitHub Pages.
+#
+# This replaces the legacy "deploy from a branch" mode, whose builder is owned by
+# GitHub and pins its own (deprecated) action versions that we cannot update.
+#
+# Only the files listed in the "Stage the public site" step are published. The
+# repository also holds internal material (docs/, README, CONTRIBUTING) that must
+# not be served from the public domain, so the artifact is built from an explicit
+# allowlist rather than from the repository root.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deployment finish rather than cancelling it midway; a cancelled
+# Pages deployment can leave the environment occupied.
+#
+# The group is deliberately NOT the documented default of "pages". A legacy
+# pages-build-deployment run wedged in a permanently "Queued" state (its deploy
+# job already recorded as failed, but the run never transitioning and refusing to
+# cancel) would otherwise be able to hold that group and block every deploy here.
+# A distinct name still serialises this workflow's own runs, which is all the
+# serialisation we actually need.
+concurrency:
+  group: pages-actions-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Stage the public site
+        run: |
+          set -euo pipefail
+
+          # CNAME carries the custom domain. Losing it from the artifact drops
+          # deeptierscf.com back to the github.io address, so fail loudly instead.
+          test -f CNAME || { echo "::error::CNAME is missing; the custom domain would be lost."; exit 1; }
+
+          mkdir -p _site
+          cp ./*.html _site/
+          cp -R ./assets _site/
+          cp ./CNAME _site/
+
+          echo "Publishing:"
+          find _site -type f | sort | sed 's/^/  /'
+
+      - name: Confirm nothing internal is being published
+        run: |
+          set -euo pipefail
+          if find _site \( -iname '*.md' -o -path '_site/docs/*' \) | grep -q .; then
+            echo "::error::Internal documentation reached the publish directory."
+            exit 1
+          fi
+          echo "OK: no markdown or docs/ content in the artifact."
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
