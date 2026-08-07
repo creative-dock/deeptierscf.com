@@ -22,8 +22,15 @@ permissions:
 
 # Let a running deployment finish rather than cancelling it midway; a cancelled
 # Pages deployment can leave the environment occupied.
+#
+# The group is deliberately NOT the documented default of "pages". A legacy
+# pages-build-deployment run wedged in a permanently "Queued" state (its deploy
+# job already recorded as failed, but the run never transitioning and refusing to
+# cancel) would otherwise be able to hold that group and block every deploy here.
+# A distinct name still serialises this workflow's own runs, which is all the
+# serialisation we actually need.
 concurrency:
-  group: pages
+  group: pages-actions-deploy
   cancel-in-progress: false
 
 jobs:
