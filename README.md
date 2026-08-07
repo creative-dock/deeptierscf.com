@@ -140,16 +140,41 @@ Nothing in the layout depends on the mark.
 
 ## Deployment
 
-Because the output is plain static files, any of these work with zero configuration — point the host at
-the repository root:
+The site is live at **https://deeptierscf.com/**, published by
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) on every push to `main`. Pages
+is set to **Source: GitHub Actions**; changing it back to "deploy from a branch" would bypass this workflow
+entirely.
 
-- **GitHub Pages** — Settings → Pages → deploy from branch `main`, folder `/ (root)`.
+### What gets published
+
+The workflow does **not** upload the repository root. It stages an explicit allowlist:
+
+- `*.html`
+- `assets/`
+- `CNAME`
+
+Everything else stays private. This matters: the legacy branch-based deploy served raw repository files, so
+`README.md` was publicly readable at the custom domain, and `docs/` would have followed. `docs/` holds
+internal review notes and client decisions and must not be served. A guard step fails the build if any
+markdown or `docs/` content reaches the publish directory.
+
+`CNAME` carries the custom domain and must stay in the artifact; the workflow fails loudly if it is
+missing, rather than silently dropping the site back to the `github.io` address.
+
+### Why a committed workflow
+
+Earlier this repository deliberately shipped no workflow, on the reasoning that publishing should be an
+explicit act rather than a side effect of merging. That reasoning no longer holds: Pages was already
+configured to publish `main` automatically to a live domain, so the only real question was whether the
+mechanism was visible. It also went wrong in practice. GitHub's built-in branch builder pins its own action
+versions, which cannot be updated from here, and it began failing with deployments stuck in the queue past
+the ten-minute timeout. A committed workflow puts the action versions and the published file list under
+version control.
+
+Other hosts still work with zero configuration if this ever moves:
+
 - **Cloudflare Pages / Netlify / Vercel** — no build command, output directory `.`.
 - **S3 + CloudFront** or any other object store behind a CDN.
-
-No deployment workflow is committed. That is deliberate: the repository is proprietary and pre-launch, so
-publishing should be an explicit decision rather than a side effect of merging to `main`. Add a workflow
-when the venture is ready to be publicly visible.
 
 ## Contributing
 
